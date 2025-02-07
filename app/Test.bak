@@ -1,0 +1,20 @@
+module Test where
+
+import Control.Monad.Managed
+import System.IO
+
+inFile :: FilePath -> Managed Handle
+inFile filePath = managed (withFile filePath ReadMode)
+
+outFile :: FilePath -> Managed Handle
+outFile filePath = managed (withFile filePath WriteMode)
+
+main = runManaged $ do
+    inHandle  <- inFile "inFile.txt"
+    outHandle <- outFile "outFile.txt"
+    liftIO (copy inHandle outHandle)
+
+main' = do  
+    inHandle  <- inFile "inFile.txt"
+    outHandle <- outFile "outFile.txt"
+    copy inHandle outHandle

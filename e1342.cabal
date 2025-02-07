@@ -1,0 +1,208 @@
+cabal-version:      3.4
+name:               e1342
+version:            0.1.0.0
+synopsis:           A rewrite of 1341 using dear-imgui and frp
+-- description:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             madiestic
+maintainer:         madjestic13@gmail.com
+-- copyright:
+category:           Game
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.18.2.1
+    hs-source-dirs:   src
+    default-language: GHC2021
+
+executable e1342
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:
+        Paths_e1342
+    -- other-extensions:
+    build-depends:
+        base ^>=4.18.2.1
+      , e1342
+      , OpenGL
+      , sdl2 >=2.5.5.0
+      , dear-imgui
+      , dunai
+      , directory
+      , bytestring
+      , managed
+      , transformers
+      , linear
+      , text
+      , gl
+
+    hs-source-dirs:   app
+                    , src
+    default-language: GHC2021
+
+executable MultiThreadedPOC
+    import:           warnings
+    main-is:          MultiThreadedPOC.hs
+    other-modules:
+        Paths_e1342
+    -- other-extensions:
+    build-depends:
+        base ^>=4.18.2.1
+      , e1342
+      , OpenGL
+      , sdl2 >=2.5.5.0
+      , dear-imgui
+      , dunai
+      , directory
+      , bytestring
+      , managed
+      , transformers
+      , linear
+      , text
+      , gl
+
+    hs-source-dirs:   app
+                    , src
+    default-language: GHC2021
+
+executable MandelbrotYampaDIG
+    import:           warnings
+    main-is:          MandelbrotYampaDIG.hs
+    other-modules:
+        Paths_e1342
+      , Graphics.RedViz.LoadShaders
+      , Graphics.RedViz.Descriptor
+      , Graphics.RedViz.GLTF
+      , Graphics.RedViz.GLTF.Load
+      , Graphics.RedViz.GLTF.Model
+      , Graphics.RedViz.GLUtil.JuicyTextures
+      , Graphics.RedViz.GLUtil.Textures
+      , Graphics.RedViz.GLUtil.TypeMapping
+      , Graphics.RedViz.Material
+      , Graphics.RedViz.Texture
+      , Graphics.RedViz.Utils
+      
+    -- other-extensions:
+    build-depends:
+        base ^>=4.18.2.1
+      , e1342
+      , bytestring
+      , directory
+      , OpenGL
+      , sdl2 >=2.5.5.0
+      , text
+      , rio
+      , gltf-codec
+      , geomancy
+      , gl-block
+      , vector
+      , keid-core
+      , linear
+      , array
+      , JuicyPixels
+      , microlens
+      , locators
+      , ilist
+      , containers
+      , random
+      , simple-affine-space
+      , uuid
+      , aeson
+      , aeson-pretty
+      , gltf-loader
+      , dear-imgui
+      , bearriver
+      , managed
+
+    hs-source-dirs:   app
+                    , src
+    default-language: GHC2021
+
+executable test
+    import:           warnings
+    main-is:          Test.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.18.2.1
+                    , managed
+    hs-source-dirs:   app
+    default-language: GHC2021
+
+executable readme
+    import:           warnings
+    main-is:          Readme.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.18.2.1
+                    , managed
+                    , dear-imgui
+                    , sdl2 >=2.5.5.0
+                    , gl
+                    
+    hs-source-dirs:   app
+    default-language: GHC2021
+
+-- executable MandelbrotMSFDIG
+--     import:           warnings
+--     main-is:          MandelbrotMSFDIG.hs
+--     other-modules:
+--         Paths_e1342
+--       , Graphics.RedViz.LoadShaders
+--       , Graphics.RedViz.Descriptor
+--       , Graphics.RedViz.GLTF
+--       , Graphics.RedViz.GLTF.Load
+--       , Graphics.RedViz.GLTF.Model
+--       , Graphics.RedViz.GLUtil.JuicyTextures
+--       , Graphics.RedViz.GLUtil.Textures
+--       , Graphics.RedViz.GLUtil.TypeMapping
+--       , Graphics.RedViz.Material
+--       , Graphics.RedViz.Texture
+--       , Graphics.RedViz.Utils
+      
+--     -- other-extensions:
+--     build-depends:
+--         base ^>=4.18.2.1
+--       , e1342
+--       , bytestring
+--       , directory
+--       , OpenGL
+--       , sdl2 >=2.5.5.0
+--       , text
+--       , rio
+--       , gltf-codec
+--       , geomancy
+--       , gl-block
+--       , vector
+--       , keid-core
+--       , linear
+--       , array
+--       , JuicyPixels
+--       , microlens
+--       , locators
+--       , ilist
+--       , containers
+--       , random
+--       , simple-affine-space
+--       , uuid
+--       , aeson
+--       , aeson-pretty
+--       , gltf-loader
+--       , dear-imgui
+--       , bearriver
+--       , managed
+--       , transformers
+--       , dunai
+
+--     hs-source-dirs:   app
+--                     , src
+--     default-language: GHC2021
